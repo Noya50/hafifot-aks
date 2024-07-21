@@ -38,7 +38,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
 }
 
 module "diagnostic_setting" {
-  source = "git::https://github.com/Noya50/hafifot-diagnosticSetting.git"
+  source = "git::https://github.com/Noya50/hafifot-diagnosticSetting.git?ref=main"
 
   name                       = "${azurerm_kubernetes_cluster.this.name}-diagnostic-setting"
   target_resource_id         = azurerm_kubernetes_cluster.this.id
