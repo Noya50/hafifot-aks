@@ -13,7 +13,7 @@ resource "azurerm_kubernetes_cluster" "this" {
 
   identity { 
     type = var.identity_type
-  } #TODO add internal logs
+  }
 
   oms_agent {
     log_analytics_workspace_id = var.log_analytics_workspace_id
@@ -38,7 +38,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
 }
 
 module "diagnostic_setting" {
-  source = "../diagnosticSetting"
+  source = "git::https://github.com/Noya50/hafifot-diagnosticSetting.git"
 
   name                       = "${azurerm_kubernetes_cluster.this.name}-diagnostic-setting"
   target_resource_id         = azurerm_kubernetes_cluster.this.id
