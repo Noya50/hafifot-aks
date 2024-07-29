@@ -43,7 +43,6 @@ module "diagnostic_setting" {
   name                       = "${azurerm_kubernetes_cluster.this.name}-diagnostic-setting"
   target_resource_id         = azurerm_kubernetes_cluster.this.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
-  diagnostic_setting_categories = var.diagnostic_setting_categories
 }
 
 resource "azurerm_role_assignment" "acr_pull" {
