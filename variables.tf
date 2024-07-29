@@ -72,12 +72,6 @@ variable "log_analytics_workspace_id" {
   default     = null
 }
 
-variable "diagnostic_setting_categories" {
-  description = "(Optional) Categories of the diagnostic setting."
-  type = list(string)
-  default = [ "kube-apiserver", "kube-audit", "kube-audit-admin", "kube-controller-manager", "kube-scheduler", "cluster-autoscaler", "cloud-controller-manager", "guard", "csi-azuredisk-controller", "csi-azurefile-controller", "csi-snapshot-controller" ]
-}
-
 variable "identity_type" {
   description = "(Optional) the identity type of the cluster."
   type = string
